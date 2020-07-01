@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,116 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RealmPrac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bkP-ch-LmT">
+                                <rect key="frame" x="16" y="20" width="174" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="PQT-hk-hN5"/>
+                                    <constraint firstAttribute="height" constant="34" id="kBj-y6-Yfl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Htw-Qs-pj8">
+                                <rect key="frame" x="16" y="62" width="174" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="N20-Gp-Pga"/>
+                                    <constraint firstAttribute="width" constant="174" id="mST-d6-jYO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iz-Hw-PML">
+                                <rect key="frame" x="205" y="20" width="76" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="Gh5-rI-fLw"/>
+                                    <constraint firstAttribute="height" constant="34" id="scU-mm-YT7"/>
+                                </constraints>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="addAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LIh-zt-hKn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPw-JO-ZZi">
+                                <rect key="frame" x="205" y="62" width="76" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="6t4-dB-yhL"/>
+                                    <constraint firstAttribute="width" constant="76" id="YYN-ty-YPT"/>
+                                </constraints>
+                                <state key="normal" title="Read"/>
+                                <connections>
+                                    <action selector="readData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eKJ-1t-eDz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGG-vN-YLo">
+                                <rect key="frame" x="289" y="20" width="76" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="8m6-qh-sVe"/>
+                                    <constraint firstAttribute="width" constant="76" id="SKh-H9-Sg9"/>
+                                </constraints>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YbQ-lZ-wkF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsh-lQ-cFq">
+                                <rect key="frame" x="289" y="62" width="76" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="9bS-4n-jXi"/>
+                                    <constraint firstAttribute="height" constant="34" id="EEt-Bj-WaI"/>
+                                </constraints>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lpe-Gx-3LA"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-ip-Vba">
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="563" id="QE6-hQ-7dd"/>
+                                    <constraint firstAttribute="width" constant="375" id="n3O-vY-fPW"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oJy-ip-Vba" firstAttribute="top" secondItem="Htw-Qs-pj8" secondAttribute="bottom" constant="8" id="4Fj-TY-Xh5"/>
+                            <constraint firstItem="bkP-ch-LmT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="4KT-qI-i9r"/>
+                            <constraint firstItem="MPw-JO-ZZi" firstAttribute="top" secondItem="3iz-Hw-PML" secondAttribute="bottom" constant="8" id="7sY-0b-T7Q"/>
+                            <constraint firstItem="3iz-Hw-PML" firstAttribute="leading" secondItem="bkP-ch-LmT" secondAttribute="trailing" constant="15" id="95g-Gm-oef"/>
+                            <constraint firstItem="Jsh-lQ-cFq" firstAttribute="top" secondItem="yGG-vN-YLo" secondAttribute="bottom" constant="8" id="Buy-r5-CGh"/>
+                            <constraint firstItem="Jsh-lQ-cFq" firstAttribute="leading" secondItem="MPw-JO-ZZi" secondAttribute="trailing" constant="8" id="DZd-Kn-qfc"/>
+                            <constraint firstItem="yGG-vN-YLo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="EDl-jM-CYH"/>
+                            <constraint firstItem="oJy-ip-Vba" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Gqt-Ww-mrf"/>
+                            <constraint firstItem="oJy-ip-Vba" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hsn-En-bf0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yGG-vN-YLo" secondAttribute="trailing" constant="10" id="MAW-K1-Bp7"/>
+                            <constraint firstItem="MPw-JO-ZZi" firstAttribute="leading" secondItem="Htw-Qs-pj8" secondAttribute="trailing" constant="15" id="QdL-hl-6GA"/>
+                            <constraint firstItem="bkP-ch-LmT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="SNY-Cr-TQ6"/>
+                            <constraint firstItem="oJy-ip-Vba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y4M-m3-OUm"/>
+                            <constraint firstItem="Htw-Qs-pj8" firstAttribute="top" secondItem="bkP-ch-LmT" secondAttribute="bottom" constant="8" id="eYP-fl-Rio"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jsh-lQ-cFq" secondAttribute="trailing" constant="10" id="fCc-pC-A9Y"/>
+                            <constraint firstItem="oJy-ip-Vba" firstAttribute="top" secondItem="MPw-JO-ZZi" secondAttribute="bottom" constant="8" id="kOT-m3-819"/>
+                            <constraint firstItem="Htw-Qs-pj8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kvr-GJ-ysg"/>
+                            <constraint firstItem="3iz-Hw-PML" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="mmi-go-trQ"/>
+                            <constraint firstItem="yGG-vN-YLo" firstAttribute="leading" secondItem="3iz-Hw-PML" secondAttribute="trailing" constant="8" id="o7v-pe-Ylj"/>
+                            <constraint firstItem="oJy-ip-Vba" firstAttribute="top" secondItem="Jsh-lQ-cFq" secondAttribute="bottom" constant="8" id="rJR-Rt-yVj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tfAge" destination="Htw-Qs-pj8" id="h7n-iL-GGr"/>
+                        <outlet property="tfName" destination="bkP-ch-LmT" id="EPh-Wb-KsT"/>
+                        <outlet property="tvPerson" destination="oJy-ip-Vba" id="XWo-B1-IEU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
